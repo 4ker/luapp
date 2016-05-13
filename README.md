@@ -3,6 +3,11 @@
 It's a simple tool for lua.
 To help you using lua in C++ style.
 
+Tested
+
+-   Linux + CMake + GNU Make + GCC4.9, :smile:
+-   Windows + CMake + Visual Studio 2010
+
 ---
 
 -   [lua](lua/CMakeLists.txt)
