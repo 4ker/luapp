@@ -3,7 +3,6 @@
 @brief  Show you how to use multiple lua files.
 */
 
-
 #include <cstdio>
 #include <cstdlib>
 #include "luapp.hpp"

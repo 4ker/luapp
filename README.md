@@ -1,8 +1,16 @@
 # luapp
-It's a simple tool for lua.  
+
+It's a simple tool for lua.
 To help you using lua in C++ style.
 
+---
+
+-   [lua](lua/CMakeLists.txt)
+
+---
+
 ### Features
+
 - [x] Header file only.
 - [x] To register the class from C++ into lua.
 - [x] To register the global function or member function from C++ into lua.
@@ -13,6 +21,7 @@ To help you using lua in C++ style.
 - [ ] Design a C++ container to simulate lua table.
 
 ### Version
+
 1.0.0
 
 ### Example
@@ -36,35 +45,35 @@ class MyClass
 {
 public:
 
-	MyClass()
-	{
-		printf("do MyClass::MyClass()\n");
-	}
+    MyClass()
+    {
+        printf("do MyClass::MyClass()\n");
+    }
 
-	~MyClass()
-	{
-		printf("do MyClass::~MyClass()\n");
-	}
+    ~MyClass()
+    {
+        printf("do MyClass::~MyClass()\n");
+    }
 
-	lua::Int Count( lua::Int num01,
-	                lua::Int num02)
-	{
-		return num01+num02;
-	}
+    lua::Int Count( lua::Int num01,
+                    lua::Int num02)
+    {
+        return num01+num02;
+    }
 };
 
 int main()
 {
-	lua::State<>    lua;
+    lua::State<>    lua;
 
-	lua.Init();
+    lua.Init();
 
-	lua.RegisterMemberFunction("Count",&MyClass::Count);
+    lua.RegisterMemberFunction("Count",&MyClass::Count);
 
-	lua.RegisterClassEx<MyClass>("MyClass");
+    lua.RegisterClassEx<MyClass>("MyClass");
 
-	lua.DoScript("ClassIntoLua.lua");
+    lua.DoScript("ClassIntoLua.lua");
 
-	return 0;
+    return 0;
 }
 ```
