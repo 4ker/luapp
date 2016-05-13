@@ -7,7 +7,6 @@
 #include <cstdlib>
 #include "luapp.hpp"
 
-
 /* MultipleLuaFile.lua
 -----------------------------------------------------
 
@@ -22,12 +21,11 @@ end
 -----------------------------------------------------
 */
 
-
 int main()
 {
 	using lua::Int;
 
-	lua::State<>    lua;
+	lua::State<> lua;
 
 	lua.Init();
 
@@ -35,7 +33,8 @@ int main()
 
 	lua.DoScript("MultipleLuaFile.lua");
 
-	lua::Function<Int(Int,Int,Int)>   func;
+    // 输入是 int，int，int，输出是 int
+	lua::Function<Int(Int,Int,Int)> func;
 
 	lua.GetFunction("func",&func);
 
